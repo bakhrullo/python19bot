@@ -15,7 +15,7 @@ from aiogram.types import InputFile
 import pathlib
 import os
 user = {}
-API_TOKEN = '1847429204:AAEEo3ZHMVYS4rxLLpI1ctzQWpzWFs11fws'
+API_TOKEN = ''
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
