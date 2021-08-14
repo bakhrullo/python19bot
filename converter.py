@@ -5,11 +5,14 @@ from aiogram.types import Message
 from pydub import AudioSegment
 from aiogram.types import InputFile
 import pathlib
+
+
 def text_to_mp3(txt, name):
     text = txt
     language = "en"
     speech = gTTS(text = text, lang = language, slow = False)
     speech.save(name)
+
 
 def mp3_to_text(name, id):
     # convert mp3 file to wav
