@@ -49,7 +49,8 @@ async def voice(message):
     file = message.voice.file_unique_id + '.mp3'
     cos = message.voice.file_unique_id
     await message.voice.download(file)
-    await bot.send_message(message.chat.id, converter.mp3_to_text(file, cos), reply_to_message_id=message.message_id)
+    res = await converter.mp3_to_text(file, cos)
+    await bot.send_message(message.chat.id, res, reply_to_message_id=message.message_id)
     file_delete = pathlib.Path(str(file))
     file_delete.unlink()
     
@@ -60,7 +61,8 @@ async def aud(message):
     file = message.audio.file_unique_id + '.mp3'
     cos = message.audio.file_unique_id
     await message.audio.download(file)
-    await bot.send_message(message.chat.id, converter.mp3_to_text(file, cos), reply_to_message_id=message.message_id)
+    res = await converter.mp3_to_text(file, cos)
+    await bot.send_message(message.chat.id, res, reply_to_message_id=message.message_id)
 
 
 if __name__ == '__main__':
